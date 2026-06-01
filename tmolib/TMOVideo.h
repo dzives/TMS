@@ -38,7 +38,7 @@ public:
       virtual int cvMatToTMOImage(TMOImage &img, cv::VideoCapture c, cv::Mat &frame);
       virtual int getTMOImageVideoFrame(cv::VideoCapture c, int frameNumber, TMOImage &img);
       virtual int TMOImageToCvMat(TMOImage &img, cv::Mat &frame);
-      virtual int setTMOImageFrame(cv::VideoWriter out, TMOImage &img);
+      virtual int setTMOImageFrame(cv::VideoWriter &out, TMOImage &img);
       virtual int GetHeight() { return frameHeight; }
       virtual int GetWidth() { return frameWidth; }
       virtual int GetTotalNumberOfFrames() { return totalNumberOfFrames; }
