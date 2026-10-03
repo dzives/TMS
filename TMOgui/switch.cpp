@@ -102,7 +102,7 @@ SelectionControl::~SelectionControl()
 {
 }
 
-void SelectionControl::enterEvent(QEvent *e)
+void SelectionControl::enterEvent(QEnterEvent *e)
 {
     setCursor(Qt::PointingHandCursor);
     QAbstractButton::enterEvent(e);

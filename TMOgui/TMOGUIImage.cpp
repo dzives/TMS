@@ -358,7 +358,7 @@ int TMOGUIImage::New(TMOGUIImage *pSrcImage)
 							  QString("Failed to create file file : \n\n") + objectName() + "\n"); // Dialog appearing
 		return 2;
 	}
-	s = QString("File duplicated from : ") + pSrcImage->imageName;
+	s = QString("File duplicated from : ") + *pSrcImage->imageName;
 	pSrc->WriteLine(GetString(s.unicode()));
 
 	if (pInitProgress)
@@ -803,7 +803,7 @@ int TMOGUIImage::Extract(TMOGUIImage *pSrcImage, int iComponent)
 			}
 	}
 
-	s = QString("File created from : ") + pSrcImage->imageName;
+	s = QString("File created from : ") + *pSrcImage->imageName;
 	pSrc->WriteLine(GetString(s.unicode()));
 	pSrc->ProgressBar(100, 100);
 	if (pInitProgress)
@@ -881,7 +881,7 @@ int TMOGUIImage::MergeComponents(TMOGUIImage *pRed, TMOGUIImage *pGreen, TMOGUII
 			}
 	}
 
-	s = QString("File created from : \n") + pRed->imageName + "\n" + pGreen->imageName + "\n" + pBlue->imageName + "\n";
+   s = QString("File created from : \n") + *pRed->imageName + "\n" + *pGreen->imageName + "\n" + *pBlue->imageName + "\n";
 	pSrc->WriteLine(GetString(s.unicode()));
 	pSrc->ProgressBar(100, 100);
 	if (pInitProgress)
@@ -1030,7 +1030,7 @@ int TMOGUIImage::ImageOperation(TMOGUIImage *pRed, TMOGUIImage *pGreen, int iOpe
 			}
 	}
 
-	s = QString("File created from : \n") + pRed->imageName + "\n" + pGreen->imageName + "\n";
+	s = QString("File created from : \n") + *pRed->imageName + "\n" + *pGreen->imageName + "\n";
 	pSrc->WriteLine(GetString(s.unicode()));
 
 	pSrc->ProgressBar(100, 100);

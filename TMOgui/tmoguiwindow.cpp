@@ -18,8 +18,8 @@
 #include <QtPrintSupport/QPrinter>
 #include <QtPrintSupport/QPrintDialog>
 #include <qpainter.h>
-#include <qregexp.h>
-#include <qmatrix.h>
+#include <QRegularExpression>
+#include <QTransform>
 #include <QToolBar>
 #include <qaction.h>
 #include <QTextStream>
@@ -792,7 +792,7 @@ TMOGUIImage *TMOGUIWindow::GetNewImage(const QString &sName)
 	if (fileName.isEmpty())
 		return nullptr;
 
-	QRegExp r = QRegExp(" \\[[0123456789]+\\]", Qt::CaseSensitive, QRegExp::RegExp);
+	QRegularExpression r = QRegularExpression(" \\[[0123456789]+\\]");
 	int iFind = fileName.indexOf(r);
 	fileName = fileName.left(iFind);
 
@@ -1112,7 +1112,7 @@ void TMOGUIWindow::OperationFirst(int iImage)
 	pImages[0] = temp;
 	QPixmap *tempPixmap = temp->pImage->pSrcPixmap;
 	QImage tempImage(160, 160, QImage::Format::Format_RGB32);
-	QMatrix m;
+	QTransform m;
 	double aspect;
 	if (tempPixmap->height() > tempPixmap->width())
 		aspect = 160.0 / tempPixmap->height();
@@ -1140,7 +1140,7 @@ void TMOGUIWindow::OperationSecond(int iImage)
 	pImages[1] = temp;
 	QPixmap *tempPixmap = temp->pImage->pSrcPixmap;
 	QImage tempImage(160, 160, QImage::Format::Format_RGB32);
-	QMatrix m;
+	QTransform m;
 	double aspect;
 	if (tempPixmap->height() > tempPixmap->width())
 		aspect = 160.0 / tempPixmap->height();
@@ -1169,7 +1169,7 @@ void TMOGUIWindow::MergeComponentsRed(int iImage)
 	pImages[0] = temp;
 	QPixmap *tempPixmap = temp->pImage->pSrcPixmap;
 	QImage tempImage(160, 160, QImage::Format::Format_RGB32);
-	QMatrix m;
+	QTransform m;
 	double aspect;
 	if (tempPixmap->height() > tempPixmap->width())
 		aspect = 160.0 / tempPixmap->height();
@@ -1210,7 +1210,7 @@ void TMOGUIWindow::MergeComponentsGreen(int iImage)
 	pImages[1] = temp;
 	QPixmap *tempPixmap = temp->pImage->pSrcPixmap;
 	QImage tempImage(160, 160, QImage::Format::Format_RGB32);
-	QMatrix m;
+	QTransform m;
 	double aspect;
 	if (tempPixmap->height() > tempPixmap->width())
 		aspect = 160.0 / tempPixmap->height();
@@ -1250,7 +1250,7 @@ void TMOGUIWindow::MergeComponentsBlue(int iImage)
 	pImages[2] = temp;
 	QPixmap *tempPixmap = temp->pImage->pSrcPixmap;
 	QImage tempImage(160, 160, QImage::Format::Format_RGB32);
-	QMatrix m;
+	QTransform m;
 	double aspect;
 	if (tempPixmap->height() > tempPixmap->width())
 		aspect = 160.0 / tempPixmap->height();

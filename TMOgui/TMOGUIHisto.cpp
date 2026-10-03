@@ -19,7 +19,7 @@
 
 TMOGUIHisto::TMOGUIHisto(QWidget *parent, const char *name) : QWidget(parent)
 {
-	setAttribute(Qt::WA_NoBackground);
+	setAttribute(Qt::WA_OpaquePaintEvent);
 
 	//QGridLayout* layout = new QGridLayout;
 	//this->setLayout(layout);

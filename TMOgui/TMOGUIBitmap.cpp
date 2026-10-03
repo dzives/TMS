@@ -36,7 +36,7 @@
 TMOGUIBitmap::TMOGUIBitmap(QWidget *parent, const char *name) : QWidget(parent)
 {
 	setFixedSize(INITIAL_BITMAP_WIDTH, INITIAL_BITMAP_HEIGHT);
-	setAttribute(Qt::WA_NoBackground);
+	setAttribute(Qt::WA_OpaquePaintEvent);
 	dRatio = 1;
 	iInitial = 0;
 	pPixmap = 0;
@@ -257,7 +257,7 @@ int TMOGUIBitmap::Render(bool bRepaint)
 	if ((pSrc->GetWidth() != s.width()) || (pSrc->GetHeight() != s.height()))
 	{
 		QPixmap tempPixmap(*pSrcPixmap);
-		QMatrix m;
+		QTransform m;
 		m.scale((double)s.width() / pSrcPixmap->width(),
 				(double)s.height() / pSrcPixmap->height());
 		*pPixmap = tempPixmap.transformed(QTransform(m));

@@ -206,7 +206,8 @@
     </hint>
    </hints>
   </connection>
-  <connection>
+  <!-- qt6: doesn't compile -->
+  <!-- <connection>
    <sender>CheckBox1</sender>
    <signal>toggled(bool)</signal>
    <receiver>TMOGUIImageSize</receiver>
@@ -221,6 +222,6 @@
      <y>20</y>
     </hint>
    </hints>
-  </connection>
+  </connection> -->
  </connections>
 </ui>

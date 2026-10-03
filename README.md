@@ -1,9 +1,9 @@
 Tone Mapping Studio (TMS)
 ======
  
-2004 - 2025, Martin Cadik (cadikm@centrum.cz, http://cadik.posvete.cz/)
+2004 - 2026, Martin Cadik (cadikm@centrum.cz, http://cadik.posvete.cz/)
 
-developers: Ondrej Hajdok, Martin Cadik, Michal Augustyn, Ondrej Fialka, Antonin Lejsek, Petr Bilek, Ondrej Pecina, Pavel Fryz, Martin Molek, Vladimir Vlkovic, Jan Brida, Petr Pospisil, Tomas Chlubna, Filip Brezna, Tomas Hudziec, Vaclav Chvila, Jan Kohut, Jan Jedlicka, Michal Vlnas, Matej Valek, Lucie Smiskova, David Chocholaty, Matus Bicanovsky, Filip Sapak, Branislav Dubec, Peter Zdravecky, Lukas Macejka, Jakub Krystufek, Boris Strbak, Lucie Svobodova, Jan Findra, Milan Tichavsky, Ludmila Krejcova
+developers: Ondrej Hajdok, Martin Cadik, Michal Augustyn, Ondrej Fialka, Antonin Lejsek, Petr Bilek, Ondrej Pecina, Pavel Fryz, Martin Molek, Vladimir Vlkovic, Jan Brida, Petr Pospisil, Tomas Chlubna, Filip Brezna, Tomas Hudziec, Vaclav Chvila, Jan Kohut, Jan Jedlicka, Michal Vlnas, Matej Valek, Lucie Smiskova, David Chocholaty, Matus Bicanovsky, Filip Sapak, Branislav Dubec, Peter Zdravecky, Lukas Macejka, Jakub Krystufek, Boris Strbak, Lucie Svobodova, Jan Findra, Milan Tichavsky, Ludmila Krejcova, Jakub Kostial
 
 
 implemented HDR tone mapping operators: https://cadik.posvete.cz/tmo/
@@ -85,7 +85,7 @@ You need at least these libraries:
 - TensorFlow              https://www.tensorflow.org/
 
 and for GUI:
-- Qt5              https://www.qt.io/offline-installers
+- Qt6              https://www.qt.io/offline-installers
 
 
 On Debian/Ubuntu these are provided by packages:
@@ -102,7 +102,7 @@ On Debian/Ubuntu these are provided by packages:
   
 On Ubuntu, you should install the following packages as follows:
 ```
-sudo apt-get install libopenexr-dev libtiff5-dev libjpeg-dev qt5-default qt5-doc qttools5-dev-tools libfftw3-3 libboost-all-dev libopencv-dev
+sudo apt-get install libopenexr-dev libtiff5-dev libjpeg-dev qt6-base-dev qt6-documentation-tools qt6-base-dev-tools libfftw3-3 libboost-all-dev libopencv-dev
 ```
 
 On Fedora, you should install the following packages as follows:
@@ -116,7 +116,7 @@ On Fedora, you should install the following packages as follows:
             opencv opencv-devel \
             nlopt nlopt-devel \
             eigen3-devel \
-            qt5-qtbase-devel
+            qt6-qtbase-devel
 
 
 Install

@@ -11,13 +11,15 @@ SET(CMAKE_VERBOSE_MAKEFILE ON)
 SET(CMAKE_INCLUDE_CURRENT_DIR TRUE)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
+SET(CMAKE_CXX_STANDARD 17)
+
 cmake_minimum_required(VERSION 3.1.0)
 
 if(CMAKE_VERSION VERSION_LESS "3.7.0")
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
 endif()
 
-find_package(Qt5 COMPONENTS Widgets PrintSupport REQUIRED)
+find_package(Qt6 COMPONENTS Widgets PrintSupport REQUIRED)
 
 INCLUDE_DIRECTORIES(
 ${CMAKE_BINARY_DIR}
@@ -127,7 +129,7 @@ SET(RESOURCE
 icons.qrc
 )
 
-qt5_add_resources(RESOURCE_ADDED ${RESOURCE})
+qt6_add_resources(RESOURCE_ADDED ${RESOURCE})
 
 SET(EXE_NAME "tmogui${TAG_VERSION}" )
 ADD_EXECUTABLE(${EXE_NAME}
@@ -135,7 +137,7 @@ ADD_EXECUTABLE(${EXE_NAME}
   ${RESOURCE_ADDED}
 )
 
-target_link_libraries(tmogui Qt5::Widgets Qt5::PrintSupport)
+target_link_libraries(tmogui Qt6::Widgets Qt6::PrintSupport)
 add_custom_command( TARGET ${EXE_NAME} POST_BUILD
   COMMAND cp -r tmogui ../
 )

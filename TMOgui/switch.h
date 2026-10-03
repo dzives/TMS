@@ -18,6 +18,7 @@
 #define SWITCH_H
 
 #include <QtWidgets>
+#include <QEnterEvent>
 #include "style.h"
 
 class Animator : public QVariantAnimation
@@ -62,7 +63,7 @@ Q_SIGNALS:
     void stateChanged(int);
 
 protected:
-    void enterEvent(QEvent *) override;
+    void enterEvent(QEnterEvent *) override;
     void checkStateSet() override;
     void nextCheckState() override;
     virtual void toggle(Qt::CheckState state) = 0;
